@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Welcome &#8212; 46700</title>
+    <title>Transformer Modelling Guidelines &#8212; 46700</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'intro-transformers';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Project description" href="intro-project.html" />
+    <link rel="prev" title="Grid modelling" href="intro-gridmodelling.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,8 +124,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -144,7 +142,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -175,16 +173,16 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Welcome
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro-project.html">Project description</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-gridmodelling.html">Grid modelling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro-transformers.html">Transformer Modelling Guidelines</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Transformer Modelling Guidelines</a></li>
 </ul>
 
     </div>
@@ -256,7 +254,7 @@
       
       
       
-      <li><a href="https://github.com/harisdtu/46700/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/harisdtu/46700/issues/new?title=Issue%20on%20page%20%2Fintro-transformers.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -286,7 +284,7 @@
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/intro-transformers.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -357,7 +355,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -368,11 +368,23 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Welcome</h1>
+    <h1>Transformer Modelling Guidelines</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#positive-sequence-impedance-z1">Positive Sequence Impedance (Z₁)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zero-sequence-impedance-z0">Zero Sequence Impedance (Z₀)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-parameters-300-mva-400-132-kv-ynd1">Transformer Parameters (300 MVA, 400/132 kV YNd1)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-parameters-300-mva-20-400-kv-ynd1">Transformer Parameters (300 MVA, 20/400 kV YNd1)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-parameters-300-mva-20-132-kv-ynd1">Transformer Parameters (300 MVA, 20/132 kV YNd1)</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -382,24 +394,161 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="welcome">
-<h1>Welcome<a class="headerlink" href="#welcome" title="Link to this heading">#</a></h1>
-<p>Welcome to the website accompanying the course <a class="reference external" href="https://kurser.dtu.dk/course/2024-2025/46770?menulanguage=en">Integrated Energy Grids course</a>. This course has been developed by <a class="reference external" href="https://martavictoria.org">Assoc. Prof. Marta Victoria</a> and offered at <a class="reference external" href="https://www.dtu.dk/english/">DTU</a>.</p>
-<p>On this website, you will find tutorials for different topics covered in the course, as well as detailed solutions for some of the problems proposed in the course. Python and packages such as <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">networkx</span></code>, and <code class="docutils literal notranslate"><span class="pre">pypsa</span></code> are used to obtain the solution. The facilitate the starting process, practical introductions to those packages are also provided.</p>
-<p>The topics covered in the problems include:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="transformer-modelling-guidelines">
+<h1>Transformer Modelling Guidelines<a class="headerlink" href="#transformer-modelling-guidelines" title="Link to this heading">#</a></h1>
+<p>To simplify the design of your system, allow you to focus on the main design choices, and better control the operation of the system, some simplifications are required when adding transformers. Also, the 50-node limit adds additional constraints. Very large transformers in the order of 1000 MVA are not very common. In practice, several smaller transformers will be connected in parallel. Below we provide some typical parameters for a 20/400 kV and a 132/400 kV transformer equipped with on-load tap changers. You need to define those elements in PowerFactory as they don’t exist. You are free to modify the size of the transformer by reasonable amounts, e.g., 50 MVA more or less than 300 MVA. If you want to use very different component sizes then provide some reference for your choice of parameters.</p>
+<p>The <strong>vector group</strong> describes the winding connections and phase displacement between the high voltage (HV) and low voltage (LV) sides of a transformer. For a 132/400 kV transformer, a common choice is <strong>YNd1</strong>:</p>
 <ul class="simple">
-<li><p>Time series analysis applied to wind and solar generation</p></li>
-<li><p>Optimization problems and interpretation of KKT/Lagrange multipliers</p></li>
-<li><p>Optimal economic dispatch</p></li>
-<li><p>Incidence matrix representing a network topology and susceptance matrix</p></li>
-<li><p>Optimal power flow and linearized optimal power flow</p></li>
-<li><p>Gas networks</p></li>
-<li><p>Heat networks</p></li>
-<li><p>Capacity and dispatch optimization in a single node and a network</p></li>
-<li><p>Multi-carrier energy systems integration</p></li>
+<li><p><strong>Y</strong> = star connection on the HV side, usually grounded (neutral available)</p></li>
+<li><p><strong>D</strong> = delta connection on the LV side, no neutral</p></li>
+<li><p><strong>1</strong> = 30° phase shift between HV and LV windings</p></li>
 </ul>
-<div class="toctree-wrapper compound">
+<section id="positive-sequence-impedance-z1">
+<h2>Positive Sequence Impedance (Z₁)<a class="headerlink" href="#positive-sequence-impedance-z1" title="Link to this heading">#</a></h2>
+<p>Positive sequence impedance represents the transformer’s impedance to <strong>balanced, three-phase currents</strong> (normal operation and symmetrical faults). It mainly consists of the winding resistance (R₁) and leakage reactance (X₁) due to magnetic flux leakage. Positive sequence impedance determines voltage drops under load and influences short-circuit current magnitude. It is typically expressed as a percentage of rated voltage (%Uk) or in per unit.</p>
+</section>
+<section id="zero-sequence-impedance-z0">
+<h2>Zero Sequence Impedance (Z₀)<a class="headerlink" href="#zero-sequence-impedance-z0" title="Link to this heading">#</a></h2>
+<p>Zero sequence impedance represents the transformer’s impedance to <strong>zero-sequence currents</strong>, which occur during <strong>ground faults</strong> or unbalanced conditions. It strongly depends on the transformer’s winding connections and grounding method. In a YNd transformer, zero-sequence currents can flow through the star (Y) side neutral but are blocked on the delta (D) side, resulting in zero-sequence impedance values different from positive sequence impedance. Zero sequence impedance is usually higher than positive sequence impedance and is critical for accurate earth fault and protection analysis.</p>
+</section>
+<section id="transformer-parameters-300-mva-400-132-kv-ynd1">
+<h2>Transformer Parameters (300 MVA, 400/132 kV YNd1)<a class="headerlink" href="#transformer-parameters-300-mva-400-132-kv-ynd1" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Value</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Rating</p></td>
+<td><p>300 MVA</p></td>
+<td><p>Rated apparent power</p></td>
+</tr>
+<tr class="row-odd"><td><p>Voltage</p></td>
+<td><p>400/132 kV</p></td>
+<td><p>HV/LV nominal voltage</p></td>
+</tr>
+<tr class="row-even"><td><p>Vector Group</p></td>
+<td><p>YNd1</p></td>
+<td><p>Star (HV) - Delta (LV) with 30° phase shift</p></td>
+</tr>
+<tr class="row-odd"><td><p>Separate Neutral (N)</p></td>
+<td><p>Yes</p></td>
+<td><p>Neutral brought on HV side, solidly grounded</p></td>
+</tr>
+<tr class="row-even"><td><p>Pos seq reactance, X₁</p></td>
+<td><p>0.12 pu</p></td>
+<td><p>Leakage reactance</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pos seq resistance, R₁</p></td>
+<td><p>0.03 pu</p></td>
+<td><p>Winding resistance</p></td>
+</tr>
+<tr class="row-even"><td><p>Zero seq reactance, X₀</p></td>
+<td><p>0.30 pu</p></td>
+<td><p>Includes grounding and delta path</p></td>
+</tr>
+<tr class="row-odd"><td><p>Zero seq resistance, R₀</p></td>
+<td><p>0.07 pu</p></td>
+<td><p>Zero sequence copper losses</p></td>
+</tr>
+</tbody>
+</table>
 </div>
+</section>
+<section id="transformer-parameters-300-mva-20-400-kv-ynd1">
+<h2>Transformer Parameters (300 MVA, 20/400 kV YNd1)<a class="headerlink" href="#transformer-parameters-300-mva-20-400-kv-ynd1" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Value</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Rating</p></td>
+<td><p>300 MVA</p></td>
+<td><p>Rated apparent power</p></td>
+</tr>
+<tr class="row-odd"><td><p>Voltage</p></td>
+<td><p>20/400 kV</p></td>
+<td><p>HV/LV nominal voltage</p></td>
+</tr>
+<tr class="row-even"><td><p>Vector Group</p></td>
+<td><p>YNd1</p></td>
+<td><p>Star (HV) - Delta (LV) with 30° phase shift</p></td>
+</tr>
+<tr class="row-odd"><td><p>Separate Neutral (N)</p></td>
+<td><p>Yes</p></td>
+<td><p>Neutral brought on HV side, solidly grounded</p></td>
+</tr>
+<tr class="row-even"><td><p>Pos seq reactance, X₁</p></td>
+<td><p>0.13 pu</p></td>
+<td><p>Leakage reactance</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pos seq resistance, R₁</p></td>
+<td><p>0.02 pu</p></td>
+<td><p>Winding resistance</p></td>
+</tr>
+<tr class="row-even"><td><p>Zero seq reactance, X₀</p></td>
+<td><p>0.35 pu</p></td>
+<td><p>Includes grounding and delta path</p></td>
+</tr>
+<tr class="row-odd"><td><p>Zero seq resistance, R₀</p></td>
+<td><p>0.05 pu</p></td>
+<td><p>Zero sequence copper losses</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="transformer-parameters-300-mva-20-132-kv-ynd1">
+<h2>Transformer Parameters (300 MVA, 20/132 kV YNd1)<a class="headerlink" href="#transformer-parameters-300-mva-20-132-kv-ynd1" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Value</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Rating</p></td>
+<td><p>300 MVA</p></td>
+<td><p>Rated apparent power</p></td>
+</tr>
+<tr class="row-odd"><td><p>Voltage</p></td>
+<td><p>20/132 kV</p></td>
+<td><p>HV/LV nominal voltage</p></td>
+</tr>
+<tr class="row-even"><td><p>Vector Group</p></td>
+<td><p>YNd1</p></td>
+<td><p>Star (HV) - Delta (LV) with 30° phase shift</p></td>
+</tr>
+<tr class="row-odd"><td><p>Separate Neutral (N)</p></td>
+<td><p>Yes</p></td>
+<td><p>Neutral brought on HV side, solidly grounded</p></td>
+</tr>
+<tr class="row-even"><td><p>Pos seq reactance, X₁</p></td>
+<td><p>0.12 pu</p></td>
+<td><p>Leakage reactance</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pos seq resistance, R₁</p></td>
+<td><p>0.025 pu</p></td>
+<td><p>Winding resistance</p></td>
+</tr>
+<tr class="row-even"><td><p>Zero seq reactance, X₀</p></td>
+<td><p>0.30 pu</p></td>
+<td><p>Includes grounding and delta path</p></td>
+</tr>
+<tr class="row-odd"><td><p>Zero seq resistance, R₀</p></td>
+<td><p>0.06 pu</p></td>
+<td><p>Zero sequence copper losses</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -432,14 +581,14 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
-       href="intro-project.html"
-       title="next page">
+    <a class="left-prev"
+       href="intro-gridmodelling.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Project description</p>
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Grid modelling</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -447,6 +596,25 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#positive-sequence-impedance-z1">Positive Sequence Impedance (Z₁)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zero-sequence-impedance-z0">Zero Sequence Impedance (Z₀)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-parameters-300-mva-400-132-kv-ynd1">Transformer Parameters (300 MVA, 400/132 kV YNd1)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-parameters-300-mva-20-400-kv-ynd1">Transformer Parameters (300 MVA, 20/400 kV YNd1)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-parameters-300-mva-20-132-kv-ynd1">Transformer Parameters (300 MVA, 20/132 kV YNd1)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

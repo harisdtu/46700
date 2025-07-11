@@ -6,3 +6,4 @@ root: intro
 chapters:
 - file: intro-project
 - file: intro-gridmodelling
+- file: intro-transformers
