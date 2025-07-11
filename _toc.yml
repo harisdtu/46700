@@ -5,6 +5,4 @@ format: jb-book
 root: intro
 chapters:
 - file: intro-project
-- file: intro-python
-- file: intro-matplotlib
-- file: intro-pandas
+- file: intro-gridmodelling

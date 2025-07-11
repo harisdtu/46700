@@ -1,0 +1,7 @@
+## Grid modelling
+
+You are free to choose a country or region anywhere in the world. To ensure projects remain comparable, the selected area should cover approximately **40,000 km² to 60,000 km²**. Please adhere to this size range: a larger area would require more and longer transmission lines, potentially creating complications in your grid, while a smaller area may not offer enough complexity to make the analysis meaningful.
+
+Regardless of the region’s actual electricity demand, we standardize the total demand to lie between **2 GW and 6 GW**, distributed across the area in proportion to population density and industrial activity (see Demand Modelling for details). This scale is chosen to strike a balance between analytical depth and practical feasibility.
+
+This initial modeling phase is primarily about making *reasonable assumptions* regarding the location and sizing of both demand and generation. These assumptions will serve as the foundation for your later analysis. You should follow the constraints outlined below, and whenever you need to make choices—such as the capacity of a power plant—you must provide clear reasoning. Your rationale can be based on economic, geographical, technological, or political considerations, but it should be consistent throughout the system. The goal is not to create a perfect replica of a real-world grid, but rather a realistic and plausible system that **could** exist.
