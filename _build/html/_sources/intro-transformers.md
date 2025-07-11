@@ -1,3 +1,8 @@
+---
+title: Transformer Modelling Guidelines
+nav_order: 4
+---
+
 # Transformer Modelling Guidelines
 
 To simplify the design of your system, allow you to focus on the main design choices, and better control the operation of the system, some simplifications are required when adding transformers. Also, the 50-node limit adds additional constraints. Very large transformers in the order of 1000 MVA are not very common. In practice, several smaller transformers will be connected in parallel. Below we provide some typical parameters for a 20/400 kV and a 132/400 kV transformer equipped with on-load tap changers. You need to define those elements in PowerFactory as they don't exist. You are free to modify the size of the transformer by reasonable amounts, e.g., 50 MVA more or less than 300 MVA. If you want to use very different component sizes then provide some reference for your choice of parameters.

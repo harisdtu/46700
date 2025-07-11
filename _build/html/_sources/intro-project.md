@@ -1,3 +1,8 @@
+---
+title: Project description
+nav_order: 2
+---
+
 ## Project description
 
 A foreign government comes to you and asks you to design their power grid.   From scratch. Can you do it?  Can you ensure the grid can safely supply electricity to everybody? And can you achieve the minimum environmental impact?
@@ -8,7 +13,7 @@ In this project, you will design a power system from scratch and perform several
 
 To explore this, you will begin by designing a conventional, robust transmission grid for a country or region of your choice. Then, you will gradually decarbonize the system by increasing the share of renewable energy sources. The project can be structured into the following steps:
 
-1. Modeling of the grid (define region, demand, and synchronous generation)  
+1. Modelling of the grid (define region, demand, and synchronous generation)  
 2. Implement baseline grid (incl. load scenarios and N-1 scenario)  
 3. Renewable expansion scenarios  
 4. Maximising renewable share  

@@ -1,3 +1,8 @@
+---
+title: Grid modelling
+nav_order: 3
+---
+
 # Grid modelling
 
 You are free to choose a country or region anywhere in the world. To ensure projects remain comparable, the selected area should cover approximately 40,000–60,000 km². Please adhere to this size range: a larger area would require more and longer transmission lines, potentially creating complications in your grid, while a smaller area may not offer enough complexity to make the analysis meaningful.
