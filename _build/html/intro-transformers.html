@@ -378,9 +378,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-group">Vector group</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#positive-sequence-impedance-z1">Positive Sequence Impedance (Z₁)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zero-sequence-impedance-z0">Zero Sequence Impedance (Z₀)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-parameters-300-mva-400-132-kv-ynd1">Transformer Parameters (300 MVA, 400/132 kV YNd1)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tap-changers">Tap changers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-parameters-300-mva-400-132-kv-dyn1">Transformer Parameters (300 MVA, 400/132 kV DYn1)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-parameters-300-mva-20-400-kv-ynd1">Transformer Parameters (300 MVA, 20/400 kV YNd1)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-parameters-300-mva-20-132-kv-ynd1">Transformer Parameters (300 MVA, 20/132 kV YNd1)</a></li>
 </ul>
@@ -396,13 +398,18 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="transformer-modelling-guidelines">
 <h1>Transformer Modelling Guidelines<a class="headerlink" href="#transformer-modelling-guidelines" title="Link to this heading">#</a></h1>
-<p>To simplify the design of your system, allow you to focus on the main design choices, and better control the operation of the system, some simplifications are required when adding transformers. Also, the 50-node limit adds additional constraints. Very large transformers in the order of 1000 MVA are not very common. In practice, several smaller transformers will be connected in parallel. Below we provide some typical parameters for a 20/400 kV and a 132/400 kV transformer equipped with on-load tap changers. You need to define those elements in PowerFactory as they don’t exist. You are free to modify the size of the transformer by reasonable amounts, e.g., 50 MVA more or less than 300 MVA. If you want to use very different component sizes then provide some reference for your choice of parameters.</p>
-<p>The <strong>vector group</strong> describes the winding connections and phase displacement between the high voltage (HV) and low voltage (LV) sides of a transformer. For a 132/400 kV transformer, a common choice is <strong>YNd1</strong>:</p>
+<p>To simplify your system design, help you focus on the key design decisions, and enable better operational control, certain simplifications are necessary when incorporating transformers. Additionally, the 50-node limit imposes further constraints. Very large transformers—around 1000 MVA—are uncommon in practice; instead, multiple smaller transformers are typically connected in parallel.</p>
+<p>Below, we outline the main transformer parameters and explain their significance. You can define different transformers; if you do so, provide a relevant reference.</p>
+<section id="vector-group">
+<h2>Vector group<a class="headerlink" href="#vector-group" title="Link to this heading">#</a></h2>
+<p>The <strong>vector group</strong> describes the winding connections and phase displacement between the high voltage (HV) and low voltage (LV) sides of a transformer. For a 400/132 kV transformer, a common choice is <strong>DYn1</strong>:</p>
 <ul class="simple">
-<li><p><strong>Y</strong> = star connection on the HV side, usually grounded (neutral available)</p></li>
-<li><p><strong>D</strong> = delta connection on the LV side, no neutral</p></li>
+<li><p><strong>D</strong> = delta connection on the HV side</p></li>
+<li><p><strong>Y</strong> = star connection on the LV side</p></li>
+<li><p><strong>n</strong> = neutral brought out on the star (LV) side</p></li>
 <li><p><strong>1</strong> = 30° phase shift between HV and LV windings</p></li>
 </ul>
+</section>
 <section id="positive-sequence-impedance-z1">
 <h2>Positive Sequence Impedance (Z₁)<a class="headerlink" href="#positive-sequence-impedance-z1" title="Link to this heading">#</a></h2>
 <p>Positive sequence impedance represents the transformer’s impedance to <strong>balanced, three-phase currents</strong> (normal operation and symmetrical faults). It mainly consists of the winding resistance (R₁) and leakage reactance (X₁) due to magnetic flux leakage. Positive sequence impedance determines voltage drops under load and influences short-circuit current magnitude. It is typically expressed as a percentage of rated voltage (%Uk) or in per unit.</p>
@@ -411,8 +418,12 @@ document.write(`
 <h2>Zero Sequence Impedance (Z₀)<a class="headerlink" href="#zero-sequence-impedance-z0" title="Link to this heading">#</a></h2>
 <p>Zero sequence impedance represents the transformer’s impedance to <strong>zero-sequence currents</strong>, which occur during <strong>ground faults</strong> or unbalanced conditions. It strongly depends on the transformer’s winding connections and grounding method. In a YNd transformer, zero-sequence currents can flow through the star (Y) side neutral but are blocked on the delta (D) side, resulting in zero-sequence impedance values different from positive sequence impedance. Zero sequence impedance is usually higher than positive sequence impedance and is critical for accurate earth fault and protection analysis.</p>
 </section>
-<section id="transformer-parameters-300-mva-400-132-kv-ynd1">
-<h2>Transformer Parameters (300 MVA, 400/132 kV YNd1)<a class="headerlink" href="#transformer-parameters-300-mva-400-132-kv-ynd1" title="Link to this heading">#</a></h2>
+<section id="tap-changers">
+<h2>Tap changers<a class="headerlink" href="#tap-changers" title="Link to this heading">#</a></h2>
+<p>For all transformers below, you can select tap settings in 10 steps of ±1.25%, covering a range from -12.5% to +12.5%.</p>
+</section>
+<section id="transformer-parameters-300-mva-400-132-kv-dyn1">
+<h2>Transformer Parameters (300 MVA, 400/132 kV DYn1)<a class="headerlink" href="#transformer-parameters-300-mva-400-132-kv-dyn1" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Parameter</p></th>
@@ -430,12 +441,12 @@ document.write(`
 <td><p>HV/LV nominal voltage</p></td>
 </tr>
 <tr class="row-even"><td><p>Vector Group</p></td>
-<td><p>YNd1</p></td>
-<td><p>Star (HV) - Delta (LV) with 30° phase shift</p></td>
+<td><p>DYn1</p></td>
+<td><p>Delta (HV) - Star (LV) with N, 30° shift</p></td>
 </tr>
 <tr class="row-odd"><td><p>Separate Neutral (N)</p></td>
 <td><p>Yes</p></td>
-<td><p>Neutral brought on HV side, solidly grounded</p></td>
+<td><p>Neutral solidly grounded on LV side only</p></td>
 </tr>
 <tr class="row-even"><td><p>Pos seq reactance, X₁</p></td>
 <td><p>0.12 pu</p></td>
@@ -473,15 +484,15 @@ document.write(`
 </tr>
 <tr class="row-odd"><td><p>Voltage</p></td>
 <td><p>20/400 kV</p></td>
-<td><p>HV/LV nominal voltage</p></td>
+<td><p>LV/HV nominal voltage</p></td>
 </tr>
 <tr class="row-even"><td><p>Vector Group</p></td>
 <td><p>YNd1</p></td>
-<td><p>Star (HV) - Delta (LV) with 30° phase shift</p></td>
+<td><p>Star (HV) with N – Delta (LV), 30° shift</p></td>
 </tr>
 <tr class="row-odd"><td><p>Separate Neutral (N)</p></td>
 <td><p>Yes</p></td>
-<td><p>Neutral brought on HV side, solidly grounded</p></td>
+<td><p>Neutral solidly grounded on HV side only</p></td>
 </tr>
 <tr class="row-even"><td><p>Pos seq reactance, X₁</p></td>
 <td><p>0.13 pu</p></td>
@@ -519,15 +530,15 @@ document.write(`
 </tr>
 <tr class="row-odd"><td><p>Voltage</p></td>
 <td><p>20/132 kV</p></td>
-<td><p>HV/LV nominal voltage</p></td>
+<td><p>LV/HV nominal voltage</p></td>
 </tr>
 <tr class="row-even"><td><p>Vector Group</p></td>
 <td><p>YNd1</p></td>
-<td><p>Star (HV) - Delta (LV) with 30° phase shift</p></td>
+<td><p>Star (HV) with N – Delta (LV), 30° shift</p></td>
 </tr>
 <tr class="row-odd"><td><p>Separate Neutral (N)</p></td>
 <td><p>Yes</p></td>
-<td><p>Neutral brought on HV side, solidly grounded</p></td>
+<td><p>Neutral solidly grounded on HV side only</p></td>
 </tr>
 <tr class="row-even"><td><p>Pos seq reactance, X₁</p></td>
 <td><p>0.12 pu</p></td>
@@ -606,9 +617,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-group">Vector group</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#positive-sequence-impedance-z1">Positive Sequence Impedance (Z₁)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zero-sequence-impedance-z0">Zero Sequence Impedance (Z₀)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-parameters-300-mva-400-132-kv-ynd1">Transformer Parameters (300 MVA, 400/132 kV YNd1)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tap-changers">Tap changers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-parameters-300-mva-400-132-kv-dyn1">Transformer Parameters (300 MVA, 400/132 kV DYn1)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-parameters-300-mva-20-400-kv-ynd1">Transformer Parameters (300 MVA, 20/400 kV YNd1)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-parameters-300-mva-20-132-kv-ynd1">Transformer Parameters (300 MVA, 20/132 kV YNd1)</a></li>
 </ul>
