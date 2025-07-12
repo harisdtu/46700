@@ -184,6 +184,7 @@
 <li class="toctree-l1"><a class="reference internal" href="intro-gridmodelling.html">Grid modelling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-transformers.html">Transformer Modelling Guidelines</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Line Modelling Guidelines</a></li>
+
 </ul>
 
     </div>
@@ -356,7 +357,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -372,6 +375,23 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Line Modelling Guidelines</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-line-parameters">Main Line Parameters</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Line Modelling Guidelines</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Main Line Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#line-parameters">Line Parameters</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -383,8 +403,115 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="line-modelling-guidelines">
 <h1>Line Modelling Guidelines<a class="headerlink" href="#line-modelling-guidelines" title="Link to this heading">#</a></h1>
-<p>As with the case of transfomers, you will need to introduce/define line elements yourselves. Again, you may need to consider multiple parallel lines, as typical lines may not have the capability of transferring the amount of power you want.</p>
+<p>As with the case of transformers, you will need to introduce/define line elements yourselves. Again, you may need to consider multiple parallel lines, as typical lines may not have the capability of transferring the amount of power you want.</p>
 <p>Below, we outline the main line parameters and explain their significance. You can define different lines; if you do so, provide a relevant reference.</p>
+<section id="main-line-parameters">
+<h2>Main Line Parameters<a class="headerlink" href="#main-line-parameters" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Voltage level</strong>: Nominal line-to-line voltage. Defines insulation level and equipment compatibility.</p></li>
+<li><p><strong>Type</strong>: Overhead line (OHL), land cable, or sea cable. Each type has different thermal and electrical characteristics.</p></li>
+<li><p><strong>Ampacity ([A])</strong>: Maximum continuous current the line can carry without exceeding its thermal limits. Determined by conductor type, bundling, and cooling conditions.</p></li>
+<li><p><strong>Resistance ([\Omega/\text{km}])</strong>: Series resistance per unit length. Affects I²R losses and voltage drop.</p></li>
+<li><p><strong>Reactance ([\Omega/\text{km}])</strong>: Series inductive reactance per unit length. Influences reactive power flow and voltage stability.</p></li>
+<li><p><strong>Admittance ([\mu\text{S}/\text{km}])</strong>: Shunt admittance per unit length. Reflects capacitive charging due to line-to-ground insulation, especially significant for cables.</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Line Modelling Guidelines<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>As with the case of transformers, you will need to introduce/define line elements yourselves. Again, you may need to consider multiple parallel lines, as typical lines may not have the capability of transferring the amount of power you want.</p>
+<p>Below, we outline the main line parameters and explain their significance. You can define different lines; if you do so, provide a relevant reference.</p>
+<blockquote>
+<div><p><strong>Note:</strong> <strong>Neutral conductors are not required</strong>, and <strong>zero-sequence impedance or admittance values can be omitted</strong>. This is because the study assumes <strong>balanced, steady-state conditions</strong> with no ground faults or asymmetrical operating scenarios. Under such conditions, only the <strong>positive-sequence network</strong> is used for power flow and voltage calculations, making zero-sequence parameters irrelevant.</p>
+</div></blockquote>
+<section id="id2">
+<h2>Main Line Parameters<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Voltage level</strong>: Nominal line-to-line voltage. Defines insulation level and equipment compatibility.</p></li>
+<li><p><strong>Type</strong>: Overhead line (OHL), land cable, or sea cable. Each type has different thermal and electrical characteristics.</p></li>
+<li><p><strong>Ampacity ([A])</strong>: Maximum continuous current the line can carry without exceeding its thermal limits. Determined by conductor type, bundling, and cooling conditions.</p></li>
+<li><p><strong>Resistance ([Ω/km])</strong>: Series resistance per unit length. Affects I²R losses and voltage drop.</p></li>
+<li><p><strong>Reactance ([\Ω/km])</strong>: Series inductive reactance per unit length. Influences reactive power flow and voltage stability.</p></li>
+<li><p><strong>Admittance ([μS/km])</strong>: Shunt admittance per unit length. Reflects capacitive charging due to line-to-ground insulation, especially significant for cables.</p></li>
+</ul>
+</section>
+<section id="line-parameters">
+<h2>Line Parameters<a class="headerlink" href="#line-parameters" title="Link to this heading">#</a></h2>
+<p>The following table summarizes typical overhead line and cable parameters for 400 kV and 132 kV systems. These values are per kilometer and represent positive-sequence parameters, suitable for balanced load flow studies.</p>
+<blockquote>
+<div><p><strong>Note:</strong> Neutral conductors are not required, and zero-sequence values can be ignored. This is because we assume <strong>balanced, steady-state conditions</strong>, where only the <strong>positive-sequence network</strong> is used for power flow and voltage calculations.</p>
+</div></blockquote>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Voltage (kV)</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Ampacity (A)</p></th>
+<th class="head"><p>Resistance (Ω/km)</p></th>
+<th class="head"><p>Reactance (Ω/km)</p></th>
+<th class="head"><p>Susceptance (μS/km)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>400</p></td>
+<td><p>OHL</p></td>
+<td><p>3400</p></td>
+<td><p>0.023</p></td>
+<td><p>0.311</p></td>
+<td><p>3.68</p></td>
+</tr>
+<tr class="row-odd"><td><p>400</p></td>
+<td><p>Land cable</p></td>
+<td><p>880</p></td>
+<td><p>0.020</p></td>
+<td><p>0.268</p></td>
+<td><p>81.6</p></td>
+</tr>
+<tr class="row-even"><td><p>400</p></td>
+<td><p>Sea cable</p></td>
+<td><p>1240</p></td>
+<td><p>0.042</p></td>
+<td><p>0.076</p></td>
+<td><p>72.3</p></td>
+</tr>
+<tr class="row-odd"><td><p>132</p></td>
+<td><p>OHL, Bluebird</p></td>
+<td><p>2050</p></td>
+<td><p>0.031</p></td>
+<td><p>0.367</p></td>
+<td><p>3.16</p></td>
+</tr>
+<tr class="row-even"><td><p>132</p></td>
+<td><p>OHL, Curlew</p></td>
+<td><p>1150</p></td>
+<td><p>0.061</p></td>
+<td><p>0.389</p></td>
+<td><p>2.98</p></td>
+</tr>
+<tr class="row-odd"><td><p>132</p></td>
+<td><p>Land cable, Cu</p></td>
+<td><p>1465</p></td>
+<td><p>0.011</p></td>
+<td><p>0.148</p></td>
+<td><p>118.8</p></td>
+</tr>
+<tr class="row-even"><td><p>132</p></td>
+<td><p>Land cable, Al</p></td>
+<td><p>765</p></td>
+<td><p>0.026</p></td>
+<td><p>0.177</p></td>
+<td><p>78.5</p></td>
+</tr>
+<tr class="row-odd"><td><p>132</p></td>
+<td><p>Sea cable</p></td>
+<td><p>835</p></td>
+<td><p>0.104</p></td>
+<td><p>0.129</p></td>
+<td><p>66.0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -432,6 +559,30 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Line Modelling Guidelines</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#main-line-parameters">Main Line Parameters</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Line Modelling Guidelines</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Main Line Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#line-parameters">Line Parameters</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>

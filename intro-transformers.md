@@ -88,7 +88,7 @@ For all transformers below, you can select tap settings in 10 steps of ±1.25%, 
 | Pos seq reactance, X₁    | 0.12 pu   | Leakage reactance                          |
 | Pos seq resistance, R₁   | 0.03 pu   | Winding resistance                         |
 
-#### Transformer Parameters (300 MVA, 20/400 kV YN1)
+#### Transformer Parameters (300 MVA, 20/400 kV YD1)
 
 | Parameter                | Value     | Notes                                      |
 |--------------------------|-----------|--------------------------------------------|
@@ -99,7 +99,7 @@ For all transformers below, you can select tap settings in 10 steps of ±1.25%, 
 | Pos seq reactance, X₁    | 0.13 pu   | Leakage reactance                          |
 | Pos seq resistance, R₁   | 0.02 pu   | Winding resistance                         |
 
-#### Transformer Parameters (300 MVA, 20/132 kV YN1)
+#### Transformer Parameters (300 MVA, 20/132 kV YD1)
 
 | Parameter                | Value     | Notes                                      |
 |--------------------------|-----------|--------------------------------------------|
