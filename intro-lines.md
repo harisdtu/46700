@@ -9,27 +9,6 @@ As with the case of transformers, you will need to introduce/define line element
 
 Below, we outline the main line parameters and explain their significance. You can define different lines; if you do so, provide a relevant reference.
 
-## Main Line Parameters
-
-- **Voltage level**: Nominal line-to-line voltage. Defines insulation level and equipment compatibility.
-
-- **Type**: Overhead line (OHL), land cable, or sea cable. Each type has different thermal and electrical characteristics.
-
-- **Ampacity \([A]\)**: Maximum continuous current the line can carry without exceeding its thermal limits. Determined by conductor type, bundling, and cooling conditions.
-
-- **Resistance \([\Omega/\text{km}]\)**: Series resistance per unit length. Affects I²R losses and voltage drop.
-
-- **Reactance \([\Omega/\text{km}]\)**: Series inductive reactance per unit length. Influences reactive power flow and voltage stability.
-
-- **Admittance \([\mu\text{S}/\text{km}]\)**: Shunt admittance per unit length. Reflects capacitive charging due to line-to-ground insulation, especially significant for cables.
-
-
-# Line Modelling Guidelines
-
-As with the case of transformers, you will need to introduce/define line elements yourselves. Again, you may need to consider multiple parallel lines, as typical lines may not have the capability of transferring the amount of power you want. 
-
-Below, we outline the main line parameters and explain their significance. You can define different lines; if you do so, provide a relevant reference.
-
 > **Note:** **Neutral conductors are not required**, and **zero-sequence impedance or admittance values can be omitted**. This is because the study assumes **balanced, steady-state conditions** with no ground faults or asymmetrical operating scenarios. Under such conditions, only the **positive-sequence network** is used for power flow and voltage calculations, making zero-sequence parameters irrelevant.
 
 ## Main Line Parameters
