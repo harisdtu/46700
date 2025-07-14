@@ -15,4 +15,4 @@ While designing your system it is very likely that you will encounter voltage pr
 
 You can use shunt elements or synchronous condensers, but the most flexible solution is a Static VAR System. This grid element can produce or consume reactive power and therefore increase or decrease voltage depending on your needs.
 
-![Voltage Control](../images/SVS.png)
+![Voltage Control](./images/SVS.png)
