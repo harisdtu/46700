@@ -35,6 +35,9 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+  theme:
+    options:
+      collapse_navigation: false
 
 launch_buttons:
   colab_url: "https://colab.research.google.com"
