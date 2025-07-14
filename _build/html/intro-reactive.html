@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Project description &#8212; 46700</title>
+    <title>Voltage Control Guidelines &#8212; 46700</title>
   
   
   
@@ -57,12 +57,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro-project';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'intro-reactive';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Grid modelling" href="intro-gridmodelling.html" />
-    <link rel="prev" title="Welcome" href="intro.html" />
+    <link rel="prev" title="Line Modelling Guidelines" href="intro-lines.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,11 +180,11 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Project description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-project.html">Project description</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-gridmodelling.html">Grid modelling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-transformers.html">Transformer Modelling Guidelines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-lines.html">Line Modelling Guidelines</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro-reactive.html">Voltage Control Guidelines</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Voltage Control Guidelines</a></li>
 </ul>
 
     </div>
@@ -257,7 +256,7 @@
       
       
       
-      <li><a href="https://github.com/harisdtu/46700/issues/new?title=Issue%20on%20page%20%2Fintro-project.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/harisdtu/46700/issues/new?title=Issue%20on%20page%20%2Fintro-reactive.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -287,7 +286,7 @@
       
       
       
-      <li><a href="_sources/intro-project.md" target="_blank"
+      <li><a href="_sources/intro-reactive.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -358,7 +357,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -369,11 +370,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Project description</h1>
+    <h1>Voltage Control Guidelines</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reactive-power-compensation">Reactive power compensation</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -383,21 +392,19 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="project-description">
-<h1>Project description<a class="headerlink" href="#project-description" title="Link to this heading">#</a></h1>
-<p>A foreign government comes to you and asks you to design their power grid.   From scratch. Can you do it?  Can you ensure the grid can safely supply electricity to everybody? And can you achieve the minimum environmental impact?</p>
-<p>In this project, you will design a power system from scratch and perform several power flow simulations. The goal is to apply the fundamental methods and concepts from the lectures in a practical context. Along the way, you will face a number of design decisions and be guided by the central question:</p>
-<p>“How do renewables impact the power system if you were the grid operator?”</p>
-<p>To explore this, you will begin by designing a conventional, robust transmission grid for a country or region of your choice. Then, you will gradually decarbonize the system by increasing the share of renewable energy sources. The project can be structured into the following steps:</p>
-<ol class="arabic simple">
-<li><p>Modelling of the grid (define region, demand, and synchronous generation)</p></li>
-<li><p>Implement baseline grid (incl. load scenarios and N-1 scenario)</p></li>
-<li><p>Renewable expansion scenarios</p></li>
-<li><p>Maximising renewable share</p></li>
-<li><p>Scenario comparison (economic, technical, CO₂-based)</p></li>
-</ol>
-<p>In this project, you will become familiar with the software tool PowerFactory.  You can find more details about PowerFactory on DTU Learn. Note that our DTU version supports a maximum of 50 buses. Consider this limit when you plan your system and leave some reserve for possible later adjustments.</p>
-<p>The following describes the different stages your power grid will experience.   Starting from a “synchronous generators only” stage towards a grid with more and more renewable energy sources.   Do you think operating the grid becomes easier or harder?</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="voltage-control-guidelines">
+<h1>Voltage Control Guidelines<a class="headerlink" href="#voltage-control-guidelines" title="Link to this heading">#</a></h1>
+<p>While designing your system it is very likely that you will encounter voltage problems: either very low values during high-load conditions, or very high values in low-loaded lines. You have three main ways to handle voltage:</p>
+<ul class="simple">
+<li><p><strong>Reactive power compensation</strong></p></li>
+<li><p><strong>Tap changers</strong></p></li>
+<li><p><strong>Voltage setpoint adjustment</strong></p></li>
+</ul>
+<section id="reactive-power-compensation">
+<h2>Reactive power compensation<a class="headerlink" href="#reactive-power-compensation" title="Link to this heading">#</a></h2>
+<p>You can use shunt elements or synchronous condensers, but the most flexible solution is a Static VAR System. This grid element can produce or consume reactive power and therefore increase or decrease voltage depending on your needs.</p>
+<p><img alt="Voltage Control" src="../images/SVS.png" /></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -431,22 +438,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="intro-lines.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome</p>
+        <p class="prev-next-title">Line Modelling Guidelines</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="intro-gridmodelling.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Grid modelling</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -454,6 +452,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reactive-power-compensation">Reactive power compensation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
