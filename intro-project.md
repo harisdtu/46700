@@ -3,7 +3,7 @@ title: Project description
 nav_order: 2
 ---
 
-## Project description
+# Project description
 
 A foreign government comes to you and asks you to design their power grid.   From scratch. Can you do it?  Can you ensure the grid can safely supply electricity to everybody? And can you achieve the minimum environmental impact?
 
