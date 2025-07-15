@@ -22,3 +22,11 @@ In the Load Flow view below, you can set the control mode. "Voltage Control" wil
 
 You may also manually set the outcome of the SVS to e.g., 10 MVAr or -20 MVAr, if you use the other control modes. However, this requires more manual tuning in your system.
 ![Voltage Control](./images/SVS2.png)
+
+## Tap changers
+
+Voltage can be regulated by taking advantage of the tap-changing capabilities of your transformers. This can be done manually (where you set the position of the tap changers) or automatically. When done automatically, you can adjust the voltage setpoint, i.e., the voltage that PF will try to achieve at one side of the transformer by adjusting the ratio.
+
+There are a few different things to consider when doing so, and are covered in the following video.
+
+[Tap changers in PF](https://panopto.dtu.dk/Panopto/Pages/Viewer.aspx?id=42b74e14-6ff4-4826-b02e-b31b00a6b5fe).
