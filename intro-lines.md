@@ -21,7 +21,7 @@ Below, we outline the main line parameters and explain their significance. You c
 
 - **Resistance \([Ω/km]\)**: Series resistance per unit length. Affects I²R losses and voltage drop.
 
-- **Reactance \([\Ω/km]\)**: Series inductive reactance per unit length. Influences reactive power flow and voltage stability.
+- **Reactance \([Ω/km]\)**: Series inductive reactance per unit length. Influences reactive power flow and voltage stability.
 
 - **Admittance \([μS/km]\)**: Shunt admittance per unit length. Reflects capacitive charging due to line-to-ground insulation, especially significant for cables.
 

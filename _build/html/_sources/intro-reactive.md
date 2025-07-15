@@ -20,6 +20,7 @@ You can add an SVS element and configure it as follows under Basic Data. Choose 
 
 In the Load Flow view below, you can set the control mode. "Voltage Control" will try to maintain voltage to the "Voltage setpoint" of your choice (1 p.u. in the case shown below). The SVS will adjust its reactive power output to maintain voltage as close to the setpoint as possible, but it may not be able to achieve that. In that case it will set the output to the max allowed value.
 
+Alternatively, if you select to use the manual control mode, you may also set the outcome of the SVS manually. For example to 10 MVAr or -20 MVAr. However, this requires more manual tuning in your system.
 You may also manually set the outcome of the SVS to e.g., 10 MVAr or -20 MVAr, if you use the other control modes. However, this requires more manual tuning in your system.
 ![Voltage Control](./images/SVS2.png)
 
