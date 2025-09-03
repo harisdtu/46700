@@ -44,3 +44,33 @@ Synchronous machines operate at a voltage level of 20 kV, so they must be connec
 To maintain voltage stability and minimize transmission losses, your grid design may include reactive power compensation equipment. This can consist of shunt capacitors, shunt reactors, synchronous condensers, or Static Var Compensators (SVCs) - Static VAR Systems in PowerFactory. These devices can be placed at buses where voltage support is necessary.
 
 However, due to cost and system complexity, the use of reactive compensation should be limited. You are allowed to install up to five reactive power compensation devices in total across the network, each of maximum 50 MVA capacity.
+
+
+## Summary of Requirements
+
+| **Category** | **Requirement** |
+|--------------|-----------------|
+| **Network** | |
+| Voltage Levels | 132 kV (preferred), 400 kV (costly, minimize use) |
+| Nodes | 15–25 nodes, min. 15 km apart |
+| Buses | Max. 50; dual-voltage nodes via transformer allowed |
+| Line Length | ≥200 km (132 kV), ≥100 km as cable (all levels) |
+| Connection Rules | Loads and generators on separate nodes |
+| Interconnection | One link: ±800 MW, ±200 MVAr |
+| Reactive Compensation | Max. 5 devices, each up to 50 MVAr |
+| Load Limits | Max. 80% loading for lines/transformers |
+| Voltage Range | 0.95–1.05 pu |
+| **Demand** | |
+| Split | 70% residential (PF = 0.98), 30% industrial (PF = 0.9) |
+| Distribution | Residential: ≥8 nodes; Industrial: ≥4 nodes |
+| Node Spacing | Split cities: min. 15 km apart |
+| Voltage Level | Connect to 132 or 400 kV (prefer 132 kV for small loads) |
+| **Generation** | |
+| Sizing | Use realistic plant sizes; avoid oversizing |
+| Connection | Large plants: 400 kV; Small: 132 kV |
+| Utilization | Match load realistically; avoid huge overcapacity |
+| Tech Constraints | PF ≥ 0.9 (lag/lead); reactive power control required |
+| Min. Output | Nuclear: 50%; Coal: 40%; Gas/Oil: 20%; Hydro: 10% |
+| Voltage | Sync gens: 20 kV, connect via transformer |
+| Transformer Size | 125% of generator rating |
+| Models | Use `Synchronous Generator` (conv.), `Static Generator` (solar/wind) |

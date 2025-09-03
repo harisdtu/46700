@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -385,6 +385,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demand-modelling">Demand Modelling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generation-modelling">Generation Modelling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reactive-power-compensation">Reactive Power Compensation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-requirements">Summary of Requirements</a></li>
 </ul>
             </nav>
         </div>
@@ -425,6 +426,91 @@ document.write(`
 <h2>Reactive Power Compensation<a class="headerlink" href="#reactive-power-compensation" title="Link to this heading">#</a></h2>
 <p>To maintain voltage stability and minimize transmission losses, your grid design may include reactive power compensation equipment. This can consist of shunt capacitors, shunt reactors, synchronous condensers, or Static Var Compensators (SVCs) - Static VAR Systems in PowerFactory. These devices can be placed at buses where voltage support is necessary.</p>
 <p>However, due to cost and system complexity, the use of reactive compensation should be limited. You are allowed to install up to five reactive power compensation devices in total across the network, each of maximum 50 MVA capacity.</p>
+</section>
+<section id="summary-of-requirements">
+<h2>Summary of Requirements<a class="headerlink" href="#summary-of-requirements" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Category</strong></p></th>
+<th class="head"><p><strong>Requirement</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Network</strong></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Voltage Levels</p></td>
+<td><p>132 kV (preferred), 400 kV (costly, minimize use)</p></td>
+</tr>
+<tr class="row-even"><td><p>Nodes</p></td>
+<td><p>15–25 nodes, min. 15 km apart</p></td>
+</tr>
+<tr class="row-odd"><td><p>Buses</p></td>
+<td><p>Max. 50; dual-voltage nodes via transformer allowed</p></td>
+</tr>
+<tr class="row-even"><td><p>Line Length</p></td>
+<td><p>≥200 km (132 kV), ≥100 km as cable (all levels)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Connection Rules</p></td>
+<td><p>Loads and generators on separate nodes</p></td>
+</tr>
+<tr class="row-even"><td><p>Interconnection</p></td>
+<td><p>One link: ±800 MW, ±200 MVAr</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reactive Compensation</p></td>
+<td><p>Max. 5 devices, each up to 50 MVAr</p></td>
+</tr>
+<tr class="row-even"><td><p>Load Limits</p></td>
+<td><p>Max. 80% loading for lines/transformers</p></td>
+</tr>
+<tr class="row-odd"><td><p>Voltage Range</p></td>
+<td><p>0.95–1.05 pu</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Demand</strong></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Split</p></td>
+<td><p>70% residential (PF = 0.98), 30% industrial (PF = 0.9)</p></td>
+</tr>
+<tr class="row-even"><td><p>Distribution</p></td>
+<td><p>Residential: ≥8 nodes; Industrial: ≥4 nodes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Node Spacing</p></td>
+<td><p>Split cities: min. 15 km apart</p></td>
+</tr>
+<tr class="row-even"><td><p>Voltage Level</p></td>
+<td><p>Connect to 132 or 400 kV (prefer 132 kV for small loads)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Generation</strong></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Sizing</p></td>
+<td><p>Use realistic plant sizes; avoid oversizing</p></td>
+</tr>
+<tr class="row-odd"><td><p>Connection</p></td>
+<td><p>Large plants: 400 kV; Small: 132 kV</p></td>
+</tr>
+<tr class="row-even"><td><p>Utilization</p></td>
+<td><p>Match load realistically; avoid huge overcapacity</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tech Constraints</p></td>
+<td><p>PF ≥ 0.9 (lag/lead); reactive power control required</p></td>
+</tr>
+<tr class="row-even"><td><p>Min. Output</p></td>
+<td><p>Nuclear: 50%; Coal: 40%; Gas/Oil: 20%; Hydro: 10%</p></td>
+</tr>
+<tr class="row-odd"><td><p>Voltage</p></td>
+<td><p>Sync gens: 20 kV, connect via transformer</p></td>
+</tr>
+<tr class="row-even"><td><p>Transformer Size</p></td>
+<td><p>125% of generator rating</p></td>
+</tr>
+<tr class="row-odd"><td><p>Models</p></td>
+<td><p>Use <code class="docutils literal notranslate"><span class="pre">Synchronous</span> <span class="pre">Generator</span></code> (conv.), <code class="docutils literal notranslate"><span class="pre">Static</span> <span class="pre">Generator</span></code> (solar/wind)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 </section>
 
@@ -496,6 +582,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demand-modelling">Demand Modelling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generation-modelling">Generation Modelling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reactive-power-compensation">Reactive Power Compensation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-requirements">Summary of Requirements</a></li>
 </ul>
   </nav></div>
 
