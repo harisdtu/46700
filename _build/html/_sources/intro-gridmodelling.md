@@ -57,7 +57,7 @@ However, due to cost and system complexity, the use of reactive compensation sho
 | Line Length | ≥200 km (132 kV), ≥100 km as cable (all levels) |
 | Connection Rules | Loads and generators on separate nodes |
 | Interconnection | One link: ±800 MW, ±200 MVAr |
-| Reactive Compensation | Max. 5 devices, each up to 50 MVAr |
+| Reactive Compensation | Max. 5 devices |
 | Load Limits | Max. 80% loading for lines/transformers |
 | Voltage Range | 0.95–1.05 pu |
 | **Demand** | |
