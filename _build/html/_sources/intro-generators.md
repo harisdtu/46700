@@ -26,7 +26,7 @@ All generators should include appropriate reactive power control (either static 
   - **50%** for nuclear  
   - **40%** for coal  
   - **20%** for gas and oil plants
-  - **10\%^** for hydro  
+  - **10\%** for hydro  
   *(all expressed as percentages of their power rating).*
 
 Synchronous machines operate at a voltage level of **20 kV**, so they must be connected to either the **132 kV** or **400 kV** grid via a transformer.  
