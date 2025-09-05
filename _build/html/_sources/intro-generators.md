@@ -23,9 +23,10 @@ For modeling purposes in PowerFactory:
 
 All generators should include appropriate reactive power control (either static or constant voltage) and must respect operational limits, as covered in the tutorial:  
 - Lower output limits are:
-  - **80%** for nuclear  
-  - **50%** for coal  
-  - **20%** for gas and oil plants  
+  - **50%** for nuclear  
+  - **40%** for coal  
+  - **20%** for gas and oil plants
+  - **10\%^** for hydro  
   *(all expressed as percentages of their power rating).*
 
 Synchronous machines operate at a voltage level of **20 kV**, so they must be connected to either the **132 kV** or **400 kV** grid via a transformer.  
