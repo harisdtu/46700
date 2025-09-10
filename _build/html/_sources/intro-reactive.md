@@ -1,6 +1,6 @@
 ---
 title: Voltage Control Guidelines
-nav_order: 6
+nav_order: 5
 ---
 
 # Voltage Control Guidelines
