@@ -22,4 +22,4 @@ This video demonstrates the fundamental steps required to build a simple power s
 
 While PowerFactory provides an extensive library of standard network elements, it is often necessary to define custom ones to meet specific modeling requirements. This tutorial will also illustrate the procedure for creating such user-defined elements.
 
-[CustomBasicGrid]](https://panopto.dtu.dk/Panopto/Pages/Viewer.aspx?id=c73f9ea2-b49e-4b2a-8014-b3540109c2ce).
+[CustomBasicGrid](https://panopto.dtu.dk/Panopto/Pages/Viewer.aspx?id=c73f9ea2-b49e-4b2a-8014-b3540109c2ce).
