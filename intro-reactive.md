@@ -30,4 +30,5 @@ Voltage can be regulated by taking advantage of the tap-changing capabilities of
 
 There are a few different things to consider when doing so, and are covered in the following video.
 
-[Tap changers in PF](https://panopto.dtu.dk/Panopto/Pages/Viewer.aspx?id=42b74e14-6ff4-4826-b02e-b31b00a6b5fe).
+[Tap changers in PF-webview](https://panopto.dtu.dk/Panopto/Pages/Viewer.aspx?id=42b74e14-6ff4-4826-b02e-b31b00a6b5fe).
+[Tap changers in PF-video](https://panopto.dtu.dk/Panopto/Content/Sessions2/0bac5df6-e6b6-4d85-a615-b31b00a6b5f5/42b74e14-6ff4-4826-b02e-b31b00a6b5fe-e8469458-167a-4734-91e0-b31b00aa0932.mp4?invocationId=fb4a64df-e98e-f011-8fff-f1aec7d4dd15)

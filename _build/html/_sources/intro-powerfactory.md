@@ -7,13 +7,9 @@ nav_order: 7
 In this section you can find some tips on how to perform various tasks in PowerFactory.
 
 ### Creating/Loading a Project
-In the following video you can see how you can create a new project in Powerfactory, and how to view/activate/deactivate your existing projects.
-- [webview](https://panopto.dtu.dk/Panopto/Pages/Viewer.aspx?id=740438b9-8150-43b5-873d-b35400f7beda)
-- [video](https://panopto.dtu.dk/Panopto/Content/Sessions2/7ec56d70-0274-4429-99d4-b35400f7bed0/740438b9-8150-43b5-873d-b35400f7beda-b3ebb4ee-c5ac-42db-a818-b35400f8e913.mp4?invocationId=09a260b4-e88e-f011-8fff-f1aec7d4dd15)
-
-When you close PF and launch it again, you will notice that nothing appears! You can load the project you want to work with as shown here:
-- [webview](https://panopto.dtu.dk/Panopto/Content/Sessions2/8975c3b1-5896-4b11-a589-b35500825f24/23bbee1d-3df5-4252-b47d-b35500825f2d-89ca2fad-45e5-4d45-9524-b35500844952.mp4?invocationId=94802629-e88e-f011-8fff-f1aec7d4dd15)
-- [video](https://panopto.dtu.dk/Panopto/Pages/Viewer.aspx?id=23bbee1d-3df5-4252-b47d-b35500825f2d) 
+In the following video you can see how you can create a new project in Powerfactory, how to view/activate/deactivate your existing projects, and how to choose a project when restarting PF.
+- [webview](https://panopto.dtu.dk/Panopto/Pages/Viewer.aspx?id=f4df922c-ea36-48be-b5c0-b355008ef694)
+- [video](https://panopto.dtu.dk/Panopto/Content/Sessions2/777cd3d9-b6fc-413c-b938-b355008ef68a/f4df922c-ea36-48be-b5c0-b355008ef694-60dd6e13-3398-4aa3-81cb-b3550095aa68.mp4?invocationId=30223b8c-ee8e-f011-8fff-f1aec7d4dd15)
 
 ### Getting Started
 The following video demonstrates the fundamental steps required to build a simple power system model in PowerFactory. Specifically, you will learn how to:
