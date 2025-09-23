@@ -27,8 +27,3 @@ You may also manually set the outcome of the SVS to e.g., 10 MVAr or -20 MVAr, i
 ## Tap changers
 
 Voltage can be regulated by taking advantage of the tap-changing capabilities of your transformers. This can be done manually (where you set the position of the tap changers) or automatically. When done automatically, you can adjust the voltage setpoint, i.e., the voltage that PF will try to achieve at one side of the transformer by adjusting the ratio.
-
-There are a few different things to consider when doing so, and are covered in the following video.
-
-[Tap changers in PF-webview](https://panopto.dtu.dk/Panopto/Pages/Viewer.aspx?id=42b74e14-6ff4-4826-b02e-b31b00a6b5fe).
-[Tap changers in PF-video](https://panopto.dtu.dk/Panopto/Content/Sessions2/0bac5df6-e6b6-4d85-a615-b31b00a6b5f5/42b74e14-6ff4-4826-b02e-b31b00a6b5fe-e8469458-167a-4734-91e0-b31b00aa0932.mp4?invocationId=fb4a64df-e98e-f011-8fff-f1aec7d4dd15)
