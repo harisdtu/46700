@@ -59,17 +59,17 @@ Source:
 The following video covers a few topics related to how you can use transformer tap changers in PowerFactory.
 
 Source:
-- [webview](https://panopto.dtu.dk/Panopto/Pages/Viewer.aspx?id=42b74e14-6ff4-4826-b02e-b31b00a6b5fe).
+- [webview](https://panopto.dtu.dk/Panopto/Pages/Viewer.aspx?id=42b74e14-6ff4-4826-b02e-b31b00a6b5fe)
 - [video](https://panopto.dtu.dk/Panopto/Content/Sessions2/0bac5df6-e6b6-4d85-a615-b31b00a6b5f5/42b74e14-6ff4-4826-b02e-b31b00a6b5fe-e8469458-167a-4734-91e0-b31b00aa0932.mp4?invocationId=fb4a64df-e98e-f011-8fff-f1aec7d4dd15)
 
 The following video covers a few topics related to voltage control in general, such as the different control modes of voltage-support elements, how you can choose/change voltage setpoints and what happens when they can't be guaranteed, and how you can use generators to control voltage. 
 
 Source:
-- [webview](https://panopto.dtu.dk/Panopto/Pages/Viewer.aspx?id=90397736-01d1-4a66-872f-b36100a92500).
+- [webview](https://panopto.dtu.dk/Panopto/Pages/Viewer.aspx?id=90397736-01d1-4a66-872f-b36100a92500)
 - [video](https://panopto.dtu.dk/Panopto/Content/Sessions2/1f080504-cac4-48d5-bd05-b36100a924f6/90397736-01d1-4a66-872f-b36100a92500-b284805f-8de5-4f85-86e8-b36100adeb03.mp4?invocationId=8cdee5d1-8398-f011-8fff-f1aec7d4dd15)
 
 This video focuses only on generators and how the reactive power operational limits affect their capability to control voltage. It also talks about how to considere power factor limitations when using generators.
 
 Source:
-- [webview](https://panopto.dtu.dk/Panopto/Pages/Viewer.aspx?id=7889eb46-fdea-4bcf-914f-b36100df017a).
+- [webview](https://panopto.dtu.dk/Panopto/Pages/Viewer.aspx?id=7889eb46-fdea-4bcf-914f-b36100df017a)
 - [video](https://panopto.dtu.dk/Panopto/Content/Sessions2/35b2f9ee-ed4e-4fe9-a722-b36100df0176/7889eb46-fdea-4bcf-914f-b36100df017a-f4d42646-1408-4976-a792-b36100e2c93d.mp4?invocationId=fe91bb6e-8498-f011-8fff-f1aec7d4dd15)
