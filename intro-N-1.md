@@ -1,9 +1,9 @@
 ---
-title: Transformer Modelling Guidelines
+title: N-1 analysis
 nav_order: 8
 ---
 
-# Single-Element Parallel Modeling in PowerFactory
+# N-1 analysis
 
 ## The Problem: Single-Element Parallel Modeling
 PowerFactory allows you to model parallel equipment (like a double-circuit line or two generators) using a single element and setting the **Number of Parallel Elements** parameter (e.g., to “2”).
