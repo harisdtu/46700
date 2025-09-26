@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Welcome &#8212; 46700</title>
+    <title>Single-Element Parallel Modeling in PowerFactory &#8212; 46700</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'intro-N-1';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Grid modelling" href="intro-gridmodelling.html" />
+    <link rel="prev" title="PowerFactory Tips" href="intro-powerfactory.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,8 +124,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -144,7 +142,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -175,20 +173,20 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Welcome
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="intro-gridmodelling.html">Grid modelling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-transformers.html">Transformer Modelling Guidelines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-lines.html">Line Modelling Guidelines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-reactive.html">Voltage Control Guidelines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-generators.html">Generators Guidelines</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-powerfactory.html">PowerFactory Tips</a></li>
-<li class="toctree-l1"><a class="reference internal" href="intro-N-1.html">Single-Element Parallel Modeling in PowerFactory</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Single-Element Parallel Modeling in PowerFactory</a></li>
 </ul>
 
     </div>
@@ -260,7 +258,7 @@
       
       
       
-      <li><a href="https://github.com/harisdtu/46700/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/harisdtu/46700/issues/new?title=Issue%20on%20page%20%2Fintro-N-1.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -290,7 +288,7 @@
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/intro-N-1.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -361,7 +359,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -372,11 +372,25 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Welcome</h1>
+    <h1>Single-Element Parallel Modeling in PowerFactory</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-single-element-parallel-modeling">The Problem: Single-Element Parallel Modeling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-it-fails-n-1">Why it Fails N-1</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-solution-explicit-modeling">The Solution: Explicit Modeling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-option">Alternative Option</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaway">Key Takeaway</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -386,12 +400,40 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="welcome">
-<h1>Welcome<a class="headerlink" href="#welcome" title="Link to this heading">#</a></h1>
-<p>Welcome to the website accompanying the course <a class="reference external" href="https://kurser.dtu.dk/course/46700">Introduction to Electric Power Systems</a>.</p>
-<p>Here you will find more details regarding the course’s group project and on how to design your own power system in PowerFactory. You will find the system requirements, implementation guidelines and tutorials on selected relevant topics.</p>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="single-element-parallel-modeling-in-powerfactory">
+<h1>Single-Element Parallel Modeling in PowerFactory<a class="headerlink" href="#single-element-parallel-modeling-in-powerfactory" title="Link to this heading">#</a></h1>
+<section id="the-problem-single-element-parallel-modeling">
+<h2>The Problem: Single-Element Parallel Modeling<a class="headerlink" href="#the-problem-single-element-parallel-modeling" title="Link to this heading">#</a></h2>
+<p>PowerFactory allows you to model parallel equipment (like a double-circuit line or two generators) using a single element and setting the <strong>Number of Parallel Elements</strong> parameter (e.g., to “2”).</p>
+<section id="why-it-fails-n-1">
+<h3>Why it Fails N-1<a class="headerlink" href="#why-it-fails-n-1" title="Link to this heading">#</a></h3>
+<p>The contingency solver treats this as <strong>one single component</strong> in the database. When the solver tests a contingency, it trips that single component, resulting in <strong>both parallel circuits being removed at once (an N-2 event)</strong>. This gives you incorrect results for a standard <strong>N-1 reliability analysis</strong>.</p>
+</section>
+</section>
+<section id="the-solution-explicit-modeling">
+<h2>The Solution: Explicit Modeling<a class="headerlink" href="#the-solution-explicit-modeling" title="Link to this heading">#</a></h2>
+<p>To correctly test the loss of just <strong>one circuit (N-1)</strong>:</p>
+<ul class="simple">
+<li><p><strong>Parallel Lines (<code class="docutils literal notranslate"><span class="pre">ElmLne</span></code>)</strong>: Draw two or more separate <code class="docutils literal notranslate"><span class="pre">ElmLne</span></code> elements between the buses.</p></li>
+<li><p><strong>Parallel Generators (<code class="docutils literal notranslate"><span class="pre">ElmGen</span></code>)</strong>: Draw two or more separate <code class="docutils literal notranslate"><span class="pre">ElmGen</span></code> elements on the busbar.</p></li>
+</ul>
+<p>By explicitly drawing each physical unit, you create <strong>distinct database objects</strong>. This allows the contingency tool to correctly select and trip only <strong>Line_A</strong> or <strong>Line_B</strong> (if you only have two lines), providing the desired <strong>N-1 behavior</strong>.</p>
+</section>
+<section id="alternative-option">
+<h2>Alternative Option<a class="headerlink" href="#alternative-option" title="Link to this heading">#</a></h2>
+<p>If you actually want to define contingencies at the level of <strong>“entire asset out”</strong> (e.g., tripping the whole double-circuit line at once), then you can stick with the single-element parallel definition. That setup effectively gives you a <strong>“truly N-1 system”</strong> — just at the <strong>asset level</strong> rather than the <strong>circuit level</strong>.</p>
+<blockquote>
+<div><p>⚠️ Note: This approach makes your system design more difficult, but it is a valid option if that level of detail is acceptable.</p>
+</div></blockquote>
+</section>
+<section id="key-takeaway">
+<h2>Key Takeaway<a class="headerlink" href="#key-takeaway" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>For <strong>true circuit-level N-1</strong>, you must <strong>explicitly model each unit separately</strong>.</p></li>
+<li><p>If you want to keep things simple and don’t need circuit-level precision, you can <strong>use the parallel approach</strong> and treat the whole element as the tripped unit. This may make creating an N-1 secure system more challenging.</p></li>
+</ul>
+<p>This way, you can <strong>choose the level of detail</strong>: we show how to set up explicit modeling for correct N-1 circuit analysis, but you can always fall back on the simpler parallel definition if that better fits your study.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -424,14 +466,14 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
-       href="intro-gridmodelling.html"
-       title="next page">
+    <a class="left-prev"
+       href="intro-powerfactory.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Grid modelling</p>
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">PowerFactory Tips</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -439,6 +481,27 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-problem-single-element-parallel-modeling">The Problem: Single-Element Parallel Modeling</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-it-fails-n-1">Why it Fails N-1</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-solution-explicit-modeling">The Solution: Explicit Modeling</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alternative-option">Alternative Option</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaway">Key Takeaway</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
