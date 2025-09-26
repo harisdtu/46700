@@ -404,15 +404,15 @@ document.write(`
 <h1>N-1 analysis<a class="headerlink" href="#n-1-analysis" title="Link to this heading">#</a></h1>
 <section id="the-problem-single-element-parallel-modeling">
 <h2>The Problem: Single-Element Parallel Modeling<a class="headerlink" href="#the-problem-single-element-parallel-modeling" title="Link to this heading">#</a></h2>
-<p>PowerFactory allows you to model parallel equipment (like a double-circuit line or two generators) using a single element and setting the <strong>Number of Parallel Elements</strong> parameter (e.g., to “2”).</p>
+<p>PowerFactory allows you to model parallel equipment (like a double-circuit line or two generators) using a single element and setting the <strong>Number of Parallel Elements</strong> parameter (e.g., to “2”). You can of course use more than 2 parallel elements.</p>
 <section id="why-it-fails-n-1">
 <h3>Why it Fails N-1<a class="headerlink" href="#why-it-fails-n-1" title="Link to this heading">#</a></h3>
-<p>The contingency solver treats this as <strong>one single component</strong> in the database. When the solver tests a contingency, it trips that single component, resulting in <strong>both parallel circuits being removed at once (an N-2 event)</strong>. This gives you incorrect results for a standard <strong>N-1 reliability analysis</strong>.</p>
+<p>The contingency solver treats this as <strong>one single component</strong> in the database. When the solver tests a contingency, it trips that single component, resulting in <strong>both parallel circuits being removed at once</strong>. It is then a matter of definition: does N-1 refer to losing the whole power station or one of its generators? In your project you can do both, but mind that losing your whole power station in the N-1 analysis (or all parallel circuits of a line) makes your design more challenging.</p>
 </section>
 </section>
 <section id="the-solution-explicit-modeling">
 <h2>The Solution: Explicit Modeling<a class="headerlink" href="#the-solution-explicit-modeling" title="Link to this heading">#</a></h2>
-<p>To correctly test the loss of just <strong>one circuit (N-1)</strong>:</p>
+<p>To test the loss of just <strong>one circuit (N-1)</strong> or <strong>one generator</strong>, you can use:</p>
 <ul class="simple">
 <li><p><strong>Parallel Lines (<code class="docutils literal notranslate"><span class="pre">ElmLne</span></code>)</strong>: Draw two or more separate <code class="docutils literal notranslate"><span class="pre">ElmLne</span></code> elements between the buses.</p></li>
 <li><p><strong>Parallel Generators (<code class="docutils literal notranslate"><span class="pre">ElmGen</span></code>)</strong>: Draw two or more separate <code class="docutils literal notranslate"><span class="pre">ElmGen</span></code> elements on the busbar.</p></li>
@@ -423,14 +423,14 @@ document.write(`
 <h2>Alternative Option<a class="headerlink" href="#alternative-option" title="Link to this heading">#</a></h2>
 <p>If you actually want to define contingencies at the level of <strong>“entire asset out”</strong> (e.g., tripping the whole double-circuit line at once), then you can stick with the single-element parallel definition. That setup effectively gives you a <strong>“truly N-1 system”</strong> — just at the <strong>asset level</strong> rather than the <strong>circuit level</strong>.</p>
 <blockquote>
-<div><p>⚠️ Note: This approach makes your system design more difficult, but it is a valid option if that level of detail is acceptable.</p>
+<div><p>⚠️ Note: This approach makes your system design more difficult, but it is a valid option.</p>
 </div></blockquote>
 </section>
 <section id="key-takeaway">
 <h2>Key Takeaway<a class="headerlink" href="#key-takeaway" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>For <strong>true circuit-level N-1</strong>, you must <strong>explicitly model each unit separately</strong>.</p></li>
-<li><p>If you want to keep things simple and don’t need circuit-level precision, you can <strong>use the parallel approach</strong> and treat the whole element as the tripped unit. This may make creating an N-1 secure system more challenging.</p></li>
+<li><p>If you want to keep things simple and don’t need circuit-level precision, you can <strong>use the parallel approach</strong> and treat the whole element as the tripped unit. This will make creating an N-1 secure system more challenging.</p></li>
 </ul>
 <p>This way, you can <strong>choose the level of detail</strong>: we show how to set up explicit modeling for correct N-1 circuit analysis, but you can always fall back on the simpler parallel definition if that better fits your study.</p>
 </section>
