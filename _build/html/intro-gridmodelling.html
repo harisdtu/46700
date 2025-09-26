@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -387,6 +387,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generation-modelling">Generation Modelling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reactive-power-compensation">Reactive Power Compensation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-requirements">Summary of Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-buses-and-nodes">Note on Buses and Nodes</a></li>
 </ul>
             </nav>
         </div>
@@ -444,7 +445,7 @@ document.write(`
 <td><p>132 kV (preferred), 400 kV (costly, minimize use)</p></td>
 </tr>
 <tr class="row-even"><td><p>Nodes</p></td>
-<td><p>15–25 nodes, min. 15 km apart</p></td>
+<td><p>Min. 15 nodes, min. 15 km apart</p></td>
 </tr>
 <tr class="row-odd"><td><p>Buses</p></td>
 <td><p>Max. 50; dual-voltage nodes via transformer allowed</p></td>
@@ -512,6 +513,21 @@ document.write(`
 </tbody>
 </table>
 </div>
+</section>
+<section id="note-on-buses-and-nodes">
+<h2>Note on Buses and Nodes<a class="headerlink" href="#note-on-buses-and-nodes" title="Link to this heading">#</a></h2>
+<p>In PowerFactory, a <strong>bus</strong> represents a connection point at a single voltage level where lines, generators, loads, and other components can be connected. A <strong>node</strong> is a logical point in the network that may correspond to a physical location (such as a substation, city connection point, or junction). Each node can consist of one or more buses, depending on the voltage levels present.</p>
+<p>When we refer to a minimum of 15 nodes, these nodes “lump” a generator and its associated transformer, which are physically very close. Adding these elements in PowerFactory results in <strong>more buses</strong> due to the different voltage levels.</p>
+<ul class="simple">
+<li><p><strong>Single-voltage node:</strong> One node corresponds to <strong>one bus</strong> at a single voltage.</p></li>
+<li><p><strong>Dual-voltage node:</strong> A location with two voltage levels (e.g., 132 kV and 400 kV) is represented as <strong>two separate buses connected by a transformer</strong>. This allows power to flow between voltage levels while keeping each bus at a consistent voltage.</p></li>
+</ul>
+<p><strong>Important points:</strong></p>
+<ul class="simple">
+<li><p>Each bus counts toward the license limit (<strong>max. 50 buses</strong> in PowerFactory).</p></li>
+<li><p>Loads and generation units should be connected to separate buses for realism and clarity.</p></li>
+</ul>
+<p>Physically, a node may appear as a single substation on a system diagram, but electrically it can involve multiple buses if multiple voltage levels are present. For example, a substation with both 132 kV and 400 kV sections would be represented as <strong>two buses connected by a transformer</strong>, even though it is a single physical location. In this project, we simplify by omitting substations and only using transformers, so each dual-voltage node will appear as <strong>two buses</strong> in PowerFactory.</p>
 </section>
 </section>
 
@@ -584,6 +600,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generation-modelling">Generation Modelling</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reactive-power-compensation">Reactive Power Compensation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-requirements">Summary of Requirements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-buses-and-nodes">Note on Buses and Nodes</a></li>
 </ul>
   </nav></div>
 

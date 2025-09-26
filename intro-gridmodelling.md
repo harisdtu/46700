@@ -52,7 +52,7 @@ However, due to cost and system complexity, the use of reactive compensation sho
 |--------------|-----------------|
 | **Network** | |
 | Voltage Levels | 132 kV (preferred), 400 kV (costly, minimize use) |
-| Nodes | 15–25 nodes, min. 15 km apart |
+| Nodes | Min. 15 nodes, min. 15 km apart |
 | Buses | Max. 50; dual-voltage nodes via transformer allowed |
 | Line Length | ≥200 km (132 kV), ≥100 km as cable (all levels) |
 | Connection Rules | Loads and generators on separate nodes |
@@ -74,3 +74,17 @@ However, due to cost and system complexity, the use of reactive compensation sho
 | Voltage | Sync gens: 20 kV, connect via transformer |
 | Transformer Size | 125% of generator rating |
 | Models | Use `Synchronous Generator` (conv.), `Static Generator` (solar/wind) |
+
+## Note on Buses and Nodes
+In PowerFactory, a **bus** represents a connection point at a single voltage level where lines, generators, loads, and other components can be connected. A **node** is a logical point in the network that may correspond to a physical location (such as a substation, city connection point, or junction). Each node can consist of one or more buses, depending on the voltage levels present.  
+
+When we refer to a minimum of 15 nodes, these nodes “lump” a generator and its associated transformer, which are physically very close. Adding these elements in PowerFactory results in **more buses** due to the different voltage levels.
+
+- **Single-voltage node:** One node corresponds to **one bus** at a single voltage.  
+- **Dual-voltage node:** A location with two voltage levels (e.g., 132 kV and 400 kV) is represented as **two separate buses connected by a transformer**. This allows power to flow between voltage levels while keeping each bus at a consistent voltage.  
+
+**Important points:**  
+- Each bus counts toward the license limit (**max. 50 buses** in PowerFactory).  
+- Loads and generation units should be connected to separate buses for realism and clarity.  
+
+Physically, a node may appear as a single substation on a system diagram, but electrically it can involve multiple buses if multiple voltage levels are present. For example, a substation with both 132 kV and 400 kV sections would be represented as **two buses connected by a transformer**, even though it is a single physical location. In this project, we simplify by omitting substations and only using transformers, so each dual-voltage node will appear as **two buses** in PowerFactory.
