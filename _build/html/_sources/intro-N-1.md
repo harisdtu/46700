@@ -15,7 +15,7 @@ The contingency solver treats this as **one single component** in the database. 
 To test the loss of just **one circuit (N-1)** or **one generator**, you can use:
 
 - **Parallel Lines (`ElmLne`)**: Draw two or more separate `ElmLne` elements between the buses.  
-- **Parallel Generators (`ElmGen`)**: Draw two or more separate `ElmGen` elements on the busbar.
+- **Parallel Generators (`ElmSym`)**: Draw two or more separate `ElmSym` elements on the busbar.
 
 By explicitly drawing each physical unit, you create **distinct database objects**. This allows the contingency tool to correctly select and trip only **Line_A** or **Line_B** (if you only have two lines), providing the desired **N-1 behavior**.
 

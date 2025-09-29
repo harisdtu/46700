@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -415,7 +415,7 @@ document.write(`
 <p>To test the loss of just <strong>one circuit (N-1)</strong> or <strong>one generator</strong>, you can use:</p>
 <ul class="simple">
 <li><p><strong>Parallel Lines (<code class="docutils literal notranslate"><span class="pre">ElmLne</span></code>)</strong>: Draw two or more separate <code class="docutils literal notranslate"><span class="pre">ElmLne</span></code> elements between the buses.</p></li>
-<li><p><strong>Parallel Generators (<code class="docutils literal notranslate"><span class="pre">ElmGen</span></code>)</strong>: Draw two or more separate <code class="docutils literal notranslate"><span class="pre">ElmGen</span></code> elements on the busbar.</p></li>
+<li><p><strong>Parallel Generators (<code class="docutils literal notranslate"><span class="pre">ElmSym</span></code>)</strong>: Draw two or more separate <code class="docutils literal notranslate"><span class="pre">ElmSym</span></code> elements on the busbar.</p></li>
 </ul>
 <p>By explicitly drawing each physical unit, you create <strong>distinct database objects</strong>. This allows the contingency tool to correctly select and trip only <strong>Line_A</strong> or <strong>Line_B</strong> (if you only have two lines), providing the desired <strong>N-1 behavior</strong>.</p>
 </section>
