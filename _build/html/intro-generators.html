@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -387,15 +387,9 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="generators-guidelines">
 <h1>Generators Guidelines<a class="headerlink" href="#generators-guidelines" title="Link to this heading">#</a></h1>
-<p>As a guideline for plant sizing, consult existing power plants to get an idea of typical lower and upper capacity limits.<br />
-These limits can vary depending on the type and location of the plant.<br />
-For example, a 100 MW nuclear plant would be highly unrealistic from an investment perspective.<br />
-Ideally, your plant sizes should be consistent with existing or planned facilities in the chosen country or region.</p>
-<p>Power plants should be connected to the appropriate voltage level depending on their size:<br />
-larger plants to the 400 kV grid and smaller ones to the 132 kV level.<br />
-When deciding on your generation portfolio, consider reasonable utilization factors.<br />
-If, for example, you have an average load of 1000 MW, installing a total of 8000 MW would lead to a very uneconomical power system.</p>
-<p>In addition, the capability to regulate active and reactive power varies between technologies.<br />
+<p>As a guideline for plant sizing, consult existing power plants to get an idea of typical lower and upper capacity limits. These limits can vary depending on the type and location of the plant. For example, a 100 MW nuclear plant would be highly unrealistic from an investment perspective. Ideally, your plant sizes should be consistent with existing or planned facilities in the chosen country or region.</p>
+<p>Power plants should be connected to the appropriate voltage level depending on their size: larger plants to the 400 kV grid and smaller ones to the 132 kV level. When deciding on your generation portfolio, consider reasonable utilization factors. If, for example, you have an average load of 1000 MW, installing a total of 8000 MW would lead to a very uneconomical power system.</p>
+<p>In addition, the capability to regulate active and reactive power varies between technologies (and the tasks).<br />
 Conventional synchronous generators must operate with a power factor no lower than <strong>cos φ = 0.9</strong> (either lagging or leading).<br />
 For modeling purposes in PowerFactory:</p>
 <ul class="simple">
@@ -414,8 +408,8 @@ For modeling purposes in PowerFactory:</p>
 </ul>
 </li>
 </ul>
-<p>Synchronous machines operate at a voltage level of <strong>20 kV</strong>, so they must be connected to either the <strong>132 kV</strong> or <strong>400 kV</strong> grid via a transformer.<br />
-For simplicity, you can assume the transformer’s rated power is <strong>125%</strong> of the generator’s apparent power rating.</p>
+<p>Synchronous machines operate at a voltage level of <strong>20 kV</strong>, so they must be connected to either the <strong>132 kV</strong> or <strong>400 kV</strong> grid via a transformer. For simplicity, you can assume the transformer’s rated power is <strong>125%</strong> of the generator’s apparent power rating. For renewables you can have them directly produce  at <strong>132 kV</strong> or <strong>400 kV</strong>.</p>
+<p>For Task 2, the static generators must operate with a power factor of 1 (no reactive power support). You can, however, use your synchronous generators as synchronous condensers with zero active power and a maximum reactive power equal to ±40% of the machine’s rated power. For Task 3 you can use your static generators for reactive power support, operating with a power factor no lower than <strong>cos φ = 0.95</strong> (either lagging or leading).</p>
 </section>
 
     <script type="text/x-thebe-config">
