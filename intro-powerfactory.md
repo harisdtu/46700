@@ -73,3 +73,9 @@ This video focuses only on generators and how the reactive power operational lim
 Source:
 - [webview](https://panopto.dtu.dk/Panopto/Pages/Viewer.aspx?id=7889eb46-fdea-4bcf-914f-b36100df017a)
 - [video](https://panopto.dtu.dk/Panopto/Content/Sessions2/35b2f9ee-ed4e-4fe9-a722-b36100df0176/7889eb46-fdea-4bcf-914f-b36100df017a-f4d42646-1408-4976-a792-b36100e2c93d.mp4?invocationId=fe91bb6e-8498-f011-8fff-f1aec7d4dd15)
+
+This video describes the limitations of using tap changers and the importance of the controlled side.
+
+Source:
+- [webview](https://panopto.dtu.dk/Panopto/Pages/Viewer.aspx?id=77dfeab5-89ef-4f64-806f-b3a100e8b854)
+- [video](https://panopto.dtu.dk/Panopto/Content/Sessions2/0fd81ed4-519c-43e9-a30f-b3a100e8b84a/77dfeab5-89ef-4f64-806f-b3a100e8b854-f043ae73-3b00-4daf-af70-b3a100ed17fb.mp4?invocationId=cece0a33-d4ca-f011-9e7e-f3e370674874)
