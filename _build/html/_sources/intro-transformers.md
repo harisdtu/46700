@@ -3,6 +3,8 @@ title: Transformer Modelling Guidelines
 nav_order: 3
 ---
 
+PENDING UPDATES
+
 # Transformer Modelling Guidelines
 
 To simplify your system design, help you focus on the key design decisions, and enable better operational control, certain simplifications are necessary when incorporating transformers. Additionally, the 50-node limit imposes further constraints. Very large transformers—around 1000 MVA—are uncommon in practice; instead, multiple smaller transformers are typically connected in parallel.
