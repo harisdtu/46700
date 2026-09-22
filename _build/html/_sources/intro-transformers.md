@@ -13,11 +13,13 @@ Below, we outline the main transformer parameters and explain their significance
 
 ### Vector Group
 
-The **vector group** describes the winding connections and phase displacement between the high voltage (HV) and low voltage (LV) sides of a transformer. For a 400/132 kV transformer, a common choice is **DYn1**:
-- **D** = delta connection on the HV side
-- **Y** = star connection on the LV side
-- **n** = neutral brought out on the star (LV) side
-- **1** = 30° phase shift between HV and LV windings
+The **vector group** describes the winding connections and phase displacement between the high-voltage (HV) and low-voltage (LV) sides of a transformer. One commonly used vector group is **DYn1**:
+- **D** = delta-connected HV winding
+- **Y** = star-connected LV winding
+- **n** = neutral point of the LV winding is brought out
+- **1** = LV voltage phasor is at the **1 o'clock position** relative to the HV phasor (30° phase displacement)
+
+The vector group determines the grounding arrangement, phase relationship, and zero-sequence current paths between the connected networks.
 
 ### Zero Sequence and Use of Neutrals
 
