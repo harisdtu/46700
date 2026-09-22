@@ -3,8 +3,6 @@ title: Transformer Modelling Guidelines
 nav_order: 3
 ---
 
-PENDING UPDATES
-
 # Transformer Modelling Guidelines
 
 To simplify your system design, help you focus on the key design decisions, and enable better operational control, certain simplifications are necessary when incorporating transformers. Additionally, the 50-node limit imposes further constraints. Very large transformers—around 1000 MVA—are uncommon in practice; instead, multiple smaller transformers are typically connected in parallel.
@@ -13,13 +11,15 @@ Below, we outline the main transformer parameters and explain their significance
 
 ### Vector Group
 
-The **vector group** describes the winding connections and phase displacement between the high-voltage (HV) and low-voltage (LV) sides of a transformer. One commonly used vector group is **DYn1**:
+The **vector group** describes the winding connections and phase displacement between the high-voltage (HV) and low-voltage (LV) sides of a transformer. One commonly used vector group is **Dyn1**:
 - **D** = delta-connected HV winding
-- **Y** = star-connected LV winding
+- **y** = star-connected LV winding
 - **n** = neutral point of the LV winding is brought out
 - **1** = LV voltage phasor is at the **1 o'clock position** relative to the HV phasor (30° phase displacement)
 
 The vector group determines the grounding arrangement, phase relationship, and zero-sequence current paths between the connected networks.
+
+**Transformer vector-group notation:** The first letter refers to the high-voltage (HV) winding and the second letter refers to the low-voltage (LV) winding.
 
 ### Zero Sequence and Use of Neutrals
 
@@ -40,76 +40,41 @@ For all transformers below, you can select tap settings in 10 steps of ±1.25%, 
 
 ### Transformer Parameters incl. Neutrals and Zero Sequence
 
-#### Transformer Parameters (300 MVA, 400/132 kV DYn1)
+#### Transformer Parameters (300 MVA, 400/132 kV YNd1)
 
 | Parameter                | Value     | Notes                                      |
 |--------------------------|-----------|--------------------------------------------|
 | Rating                   | 300 MVA   | Rated apparent power                       |
 | Voltage                  | 400/132 kV| HV/LV nominal voltage                      |
-| Vector Group             | DYn1      | Delta (HV) - Star (LV) with N, 30° shift   |
-| Separate Neutral (N)     | Yes       | Neutral solidly grounded on LV side only   |
+| Vector Group             | YNd1      | YN (400 kV) – d (132 kV), 30° shift        |
+| Neutral (N)              | Yes       | 400 kV side grounded                       |
 | Pos seq reactance, X₁    | 0.12 pu   | Leakage reactance                          |
-| Pos seq resistance, R₁   | 0.03 pu   | Winding resistance                         |
-| Zero seq reactance, X₀   | 0.30 pu   | Includes grounding and delta path          |
-| Zero seq resistance, R₀  | 0.07 pu   | Zero sequence copper losses                |
+| Pos seq resistance, R₁   | 0.003 pu  | Winding resistance                         |
+| Zero seq reactance, X₀   | 0.12 pu   | Reactance seen by zero-sequence currents   |
+| Zero seq resistance, R₀  | 0.003 pu  | Resistance seen by zero-sequence currents  |
 
-#### Transformer Parameters (300 MVA, 20/400 kV YNd1)
-
-| Parameter                | Value     | Notes                                      |
-|--------------------------|-----------|--------------------------------------------|
-| Rating                   | 300 MVA   | Rated apparent power                       |
-| Voltage                  | 20/400 kV | LV/HV nominal voltage                      |
-| Vector Group             | YNd1      | Star (HV) with N – Delta (LV), 30° shift   |
-| Separate Neutral (N)     | Yes       | Neutral solidly grounded on HV side only   |
-| Pos seq reactance, X₁    | 0.13 pu   | Leakage reactance                          |
-| Pos seq resistance, R₁   | 0.02 pu   | Winding resistance                         |
-| Zero seq reactance, X₀   | 0.35 pu   | Includes grounding and delta path          |
-| Zero seq resistance, R₀  | 0.05 pu   | Zero sequence copper losses                |
-
-#### Transformer Parameters (300 MVA, 20/132 kV YNd1)
+#### Transformer Parameters (300 MVA, 400/20 kV YNd1)
 
 | Parameter                | Value     | Notes                                      |
 |--------------------------|-----------|--------------------------------------------|
 | Rating                   | 300 MVA   | Rated apparent power                       |
-| Voltage                  | 20/132 kV | LV/HV nominal voltage                      |
-| Vector Group             | YNd1      | Star (HV) with N – Delta (LV), 30° shift   |
-| Separate Neutral (N)     | Yes       | Neutral solidly grounded on HV side only   |
-| Pos seq reactance, X₁    | 0.12 pu   | Leakage reactance                          |
-| Pos seq resistance, R₁   | 0.025 pu  | Winding resistance                         |
-| Zero seq reactance, X₀   | 0.30 pu   | Includes grounding and delta path          |
-| Zero seq resistance, R₀  | 0.06 pu   | Zero sequence copper losses                |
+| Voltage                  | 400/20 kV | HV/LV nominal voltage                      |
+| Vector Group             | YNd1      | YN (400 kV) – d (20 kV), 30° shift         |
+| Neutral (N)              | Yes       | 400 kV side grounded                       |
+| Pos seq reactance, X₁    | 0.15 pu   | Leakage reactance                          |
+| Pos seq resistance, R₁   | 0.003 pu  | Winding resistance                         |
+| Zero seq reactance, X₀   | 0.15 pu   | Reactance seen by zero-sequence currents   |
+| Zero seq resistance, R₀  | 0.003 pu  | Resistance seen by zero-sequence currents  |
 
-### Transformer Parameters excl. Neutrals and Zero Sequence
-
-#### Transformer Parameters (300 MVA, 400/132 kV DY1)
+#### Transformer Parameters (300 MVA, 132/20 kV YNd1)
 
 | Parameter                | Value     | Notes                                      |
 |--------------------------|-----------|--------------------------------------------|
 | Rating                   | 300 MVA   | Rated apparent power                       |
-| Voltage                  | 400/132 kV| HV/LV nominal voltage                      |
-| Vector Group             | DY1       | Delta (HV) - Star (LV), 30° shift          |
-| Separate Neutral (N)     | None      |                  -                         |
-| Pos seq reactance, X₁    | 0.12 pu   | Leakage reactance                          |
-| Pos seq resistance, R₁   | 0.03 pu   | Winding resistance                         |
-
-#### Transformer Parameters (300 MVA, 20/400 kV YD1)
-
-| Parameter                | Value     | Notes                                      |
-|--------------------------|-----------|--------------------------------------------|
-| Rating                   | 300 MVA   | Rated apparent power                       |
-| Voltage                  | 20/400 kV | LV/HV nominal voltage                      |
-| Vector Group             | YD1       | Star (HV) – Delta (LV), 30° shift          |
-| Separate Neutral (N)     | None      |                  -                         |
-| Pos seq reactance, X₁    | 0.13 pu   | Leakage reactance                          |
-| Pos seq resistance, R₁   | 0.02 pu   | Winding resistance                         |
-
-#### Transformer Parameters (300 MVA, 20/132 kV YD1)
-
-| Parameter                | Value     | Notes                                      |
-|--------------------------|-----------|--------------------------------------------|
-| Rating                   | 300 MVA   | Rated apparent power                       |
-| Voltage                  | 20/132 kV | LV/HV nominal voltage                      |
-| Vector Group             | YD1       | Star (HV) – Delta (LV), 30° shift          |
-| Separate Neutral (N)     | None      |                  -                         |
-| Pos seq reactance, X₁    | 0.12 pu   | Leakage reactance                          |
-| Pos seq resistance, R₁   | 0.025 pu  | Winding resistance                         |
+| Voltage                  | 132/20 kV | HV/LV nominal voltage                      |
+| Vector Group             | YNd1      | YN (132 kV) – d (20 kV), 30° shift         |
+| Neutral (N)              | Yes       | 132 kV side grounded                       |
+| Pos seq reactance, X₁    | 0.11 pu   | Leakage reactance                          |
+| Pos seq resistance, R₁   | 0.002 pu  | Winding resistance                         |
+| Zero seq reactance, X₀   | 0.11 pu   | Reactance seen by zero-sequence currents   |
+| Zero seq resistance, R₀  | 0.002 pu  | Resistance seen by zero-sequence currents  |
