@@ -11,15 +11,15 @@ Below, we outline the main transformer parameters and explain their significance
 
 ### Vector Group
 
-The **vector group** describes the winding connections and phase displacement between the high-voltage (HV) and low-voltage (LV) sides of a transformer. One commonly used vector group is **Dyn1**:
-- **D** = delta-connected HV winding
-- **y** = star-connected LV winding
-- **n** = neutral point of the LV winding is brought out
+The **vector group** describes the winding connections and phase displacement between the high-voltage (HV) and low-voltage (LV) sides of a transformer. One commonly used vector group is **YNd1**:
+- **Y** = star-connected HV winding
+- **N** = neutral point of the HV winding is brought out
+- **d** = delta-connected LV winding
 - **1** = LV voltage phasor is at the **1 o'clock position** relative to the HV phasor (30° phase displacement)
 
-The vector group determines the grounding arrangement, phase relationship, and zero-sequence current paths between the connected networks.
+**Transformer vector-group notation:** In transformer vector-group notation, the first letter refers to the HV winding and the second letter to the LV winding. Uppercase letters are used for the HV side and lowercase letters for the LV side. The symbols N and n indicate that the neutral point is accessible on the HV and LV side, respectively.
 
-**Transformer vector-group notation:** The first letter refers to the high-voltage (HV) winding and the second letter refers to the low-voltage (LV) winding.
+**Note:** The first letter always refers to the HV winding and the second letter to the LV winding, regardless of how the transformer voltages are written. For example, in YNd1, the HV winding is star-connected with a neutral brought out (YN) and the LV winding is delta-connected (d), whether the transformer is labelled/referred to as 400/20 kV or 20/400 kV.
 
 ### Zero Sequence and Use of Neutrals
 
