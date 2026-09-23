@@ -390,8 +390,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tap-changers">Tap Changers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-parameters-incl-neutrals-and-zero-sequence">Transformer Parameters incl. Neutrals and Zero Sequence</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-parameters-300-mva-400-132-kv-ynd1">Transformer Parameters (300 MVA, 400/132 kV YNd1)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-parameters-300-mva-400-132-kv-ynyn0">Transformer Parameters (300 MVA, 400/132 kV YNyn0)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-parameters-300-mva-400-20-kv-ynd1">Transformer Parameters (300 MVA, 400/20 kV YNd1)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-parameters-300-mva-132-20-kv-ynd1">Transformer Parameters (300 MVA, 132/20 kV YNd1)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-parameters-150-mva-132-20-kv-ynd1">Transformer Parameters (150 MVA, 132/20 kV YNd1)</a></li>
 </ul>
 </li>
 </ul>
@@ -460,11 +461,57 @@ document.write(`
 </tr>
 <tr class="row-even"><td><p>Vector Group</p></td>
 <td><p>YNd1</p></td>
-<td><p>YN (400 kV) – d (132 kV), 30° shift</p></td>
+<td><p>YN (400 kV) – d (132 kV), 30° phase shift</p></td>
 </tr>
 <tr class="row-odd"><td><p>Neutral (N)</p></td>
 <td><p>Yes</p></td>
 <td><p>400 kV side grounded</p></td>
+</tr>
+<tr class="row-even"><td><p>Pos seq reactance, X₁</p></td>
+<td><p>0.12 pu</p></td>
+<td><p>Leakage reactance</p></td>
+</tr>
+<tr class="row-odd"><td><p>Pos seq resistance, R₁</p></td>
+<td><p>0.003 pu</p></td>
+<td><p>Winding resistance</p></td>
+</tr>
+<tr class="row-even"><td><p>Zero seq reactance, X₀</p></td>
+<td><p>0.12 pu</p></td>
+<td><p>Reactance seen by zero-sequence currents</p></td>
+</tr>
+<tr class="row-odd"><td><p>Zero seq resistance, R₀</p></td>
+<td><p>0.003 pu</p></td>
+<td><p>Resistance seen by zero-sequence currents</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="transformer-parameters-300-mva-400-132-kv-ynyn0">
+<h3>Transformer Parameters (300 MVA, 400/132 kV YNyn0)<a class="headerlink" href="#transformer-parameters-300-mva-400-132-kv-ynyn0" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Value</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Rating</p></td>
+<td><p>300 MVA</p></td>
+<td><p>Rated apparent power</p></td>
+</tr>
+<tr class="row-odd"><td><p>Voltage</p></td>
+<td><p>400/132 kV</p></td>
+<td><p>HV/LV nominal voltage</p></td>
+</tr>
+<tr class="row-even"><td><p>Vector Group</p></td>
+<td><p>YNyn0</p></td>
+<td><p>YN (400 kV) – yn (132 kV), 0° phase shift</p></td>
+</tr>
+<tr class="row-odd"><td><p>Neutral (N)</p></td>
+<td><p>Yes</p></td>
+<td><p>Both sides grounded</p></td>
 </tr>
 <tr class="row-even"><td><p>Pos seq reactance, X₁</p></td>
 <td><p>0.12 pu</p></td>
@@ -506,7 +553,7 @@ document.write(`
 </tr>
 <tr class="row-even"><td><p>Vector Group</p></td>
 <td><p>YNd1</p></td>
-<td><p>YN (400 kV) – d (20 kV), 30° shift</p></td>
+<td><p>YN (400 kV) – d (20 kV), 30° phase shift</p></td>
 </tr>
 <tr class="row-odd"><td><p>Neutral (N)</p></td>
 <td><p>Yes</p></td>
@@ -532,8 +579,8 @@ document.write(`
 </table>
 </div>
 </section>
-<section id="transformer-parameters-300-mva-132-20-kv-ynd1">
-<h3>Transformer Parameters (300 MVA, 132/20 kV YNd1)<a class="headerlink" href="#transformer-parameters-300-mva-132-20-kv-ynd1" title="Link to this heading">#</a></h3>
+<section id="transformer-parameters-150-mva-132-20-kv-ynd1">
+<h3>Transformer Parameters (150 MVA, 132/20 kV YNd1)<a class="headerlink" href="#transformer-parameters-150-mva-132-20-kv-ynd1" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Parameter</p></th>
@@ -543,7 +590,7 @@ document.write(`
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Rating</p></td>
-<td><p>300 MVA</p></td>
+<td><p>150 MVA</p></td>
 <td><p>Rated apparent power</p></td>
 </tr>
 <tr class="row-odd"><td><p>Voltage</p></td>
@@ -552,7 +599,7 @@ document.write(`
 </tr>
 <tr class="row-even"><td><p>Vector Group</p></td>
 <td><p>YNd1</p></td>
-<td><p>YN (132 kV) – d (20 kV), 30° shift</p></td>
+<td><p>YN (132 kV) – d (20 kV), 30° phase shift</p></td>
 </tr>
 <tr class="row-odd"><td><p>Neutral (N)</p></td>
 <td><p>Yes</p></td>
@@ -652,8 +699,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tap-changers">Tap Changers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-parameters-incl-neutrals-and-zero-sequence">Transformer Parameters incl. Neutrals and Zero Sequence</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-parameters-300-mva-400-132-kv-ynd1">Transformer Parameters (300 MVA, 400/132 kV YNd1)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-parameters-300-mva-400-132-kv-ynyn0">Transformer Parameters (300 MVA, 400/132 kV YNyn0)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-parameters-300-mva-400-20-kv-ynd1">Transformer Parameters (300 MVA, 400/20 kV YNd1)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-parameters-300-mva-132-20-kv-ynd1">Transformer Parameters (300 MVA, 132/20 kV YNd1)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformer-parameters-150-mva-132-20-kv-ynd1">Transformer Parameters (150 MVA, 132/20 kV YNd1)</a></li>
 </ul>
 </li>
 </ul>

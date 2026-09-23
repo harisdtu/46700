@@ -46,8 +46,21 @@ For all transformers below, you can select tap settings in 10 steps of ±1.25%, 
 |--------------------------|-----------|--------------------------------------------|
 | Rating                   | 300 MVA   | Rated apparent power                       |
 | Voltage                  | 400/132 kV| HV/LV nominal voltage                      |
-| Vector Group             | YNd1      | YN (400 kV) – d (132 kV), 30° shift        |
+| Vector Group             | YNd1      | YN (400 kV) – d (132 kV), 30° phase shift  |
 | Neutral (N)              | Yes       | 400 kV side grounded                       |
+| Pos seq reactance, X₁    | 0.12 pu   | Leakage reactance                          |
+| Pos seq resistance, R₁   | 0.003 pu  | Winding resistance                         |
+| Zero seq reactance, X₀   | 0.12 pu   | Reactance seen by zero-sequence currents   |
+| Zero seq resistance, R₀  | 0.003 pu  | Resistance seen by zero-sequence currents  |
+
+#### Transformer Parameters (300 MVA, 400/132 kV YNyn0)
+
+| Parameter                | Value     | Notes                                      |
+|--------------------------|-----------|--------------------------------------------|
+| Rating                   | 300 MVA   | Rated apparent power                       |
+| Voltage                  | 400/132 kV| HV/LV nominal voltage                      |
+| Vector Group             | YNyn0     | YN (400 kV) – yn (132 kV), 0° phase shift  |
+| Neutral (N)              | Yes       | Both sides grounded                        |
 | Pos seq reactance, X₁    | 0.12 pu   | Leakage reactance                          |
 | Pos seq resistance, R₁   | 0.003 pu  | Winding resistance                         |
 | Zero seq reactance, X₀   | 0.12 pu   | Reactance seen by zero-sequence currents   |
@@ -59,20 +72,20 @@ For all transformers below, you can select tap settings in 10 steps of ±1.25%, 
 |--------------------------|-----------|--------------------------------------------|
 | Rating                   | 300 MVA   | Rated apparent power                       |
 | Voltage                  | 400/20 kV | HV/LV nominal voltage                      |
-| Vector Group             | YNd1      | YN (400 kV) – d (20 kV), 30° shift         |
+| Vector Group             | YNd1      | YN (400 kV) – d (20 kV), 30° phase shift   |
 | Neutral (N)              | Yes       | 400 kV side grounded                       |
 | Pos seq reactance, X₁    | 0.15 pu   | Leakage reactance                          |
 | Pos seq resistance, R₁   | 0.003 pu  | Winding resistance                         |
 | Zero seq reactance, X₀   | 0.15 pu   | Reactance seen by zero-sequence currents   |
 | Zero seq resistance, R₀  | 0.003 pu  | Resistance seen by zero-sequence currents  |
 
-#### Transformer Parameters (300 MVA, 132/20 kV YNd1)
+#### Transformer Parameters (150 MVA, 132/20 kV YNd1)
 
 | Parameter                | Value     | Notes                                      |
 |--------------------------|-----------|--------------------------------------------|
-| Rating                   | 300 MVA   | Rated apparent power                       |
+| Rating                   | 150 MVA   | Rated apparent power                       |
 | Voltage                  | 132/20 kV | HV/LV nominal voltage                      |
-| Vector Group             | YNd1      | YN (132 kV) – d (20 kV), 30° shift         |
+| Vector Group             | YNd1      | YN (132 kV) – d (20 kV), 30° phase shift   |
 | Neutral (N)              | Yes       | 132 kV side grounded                       |
 | Pos seq reactance, X₁    | 0.11 pu   | Leakage reactance                          |
 | Pos seq resistance, R₁   | 0.002 pu  | Winding resistance                         |
